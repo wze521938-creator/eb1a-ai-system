@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AI-assisted EB-1A case drafting workspace">
+    <title>EB1A AI System</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/">EB1A <span>AI</span></a>
+      <div class="status"><i></i> Secure workspace</div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="kicker">IMMIGRATION CASE WORKSPACE</p>
+        <h1>Turn Chinese evidence into a structured EB-1A draft package.</h1>
+        <p class="subhead">Upload your source documents. The system prepares legal-context translations, evidence classification, a petition draft, and an attorney-review summary.</p>
+      </section>
+
+      <section class="workspace">
+        <form id="upload-form">
+          <label class="dropzone" id="dropzone" for="documents">
+            <input id="documents" name="documents" type="file" accept=".txt,.pdf,.doc,.docx" multiple required>
+            <span class="upload-icon">↑</span>
+            <strong>Drop Chinese documents here</strong>
+            <small>or click to browse · TXT, PDF, DOC, DOCX · up to 10 files / 20 MB</small>
+          </label>
+          <div id="file-list" class="file-list" aria-live="polite"></div>
+          <button id="submit-button" type="submit">Generate case package <span>→</span></button>
+        </form>
+
+        <aside>
+          <p class="aside-title">YOUR PACKAGE</p>
+          <ol>
+            <li><span>01</span> Legal-context English translation</li>
+            <li><span>02</span> A–F evidence classification</li>
+            <li><span>03</span> Attorney-style petition draft</li>
+            <li><span>04</span> Case summary and risk report</li>
+            <li><span>05</span> Downloadable ZIP archive</li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="progress" class="panel hidden" aria-live="polite">
+        <div class="spinner"></div>
+        <div><strong>Preparing your case package…</strong><p>This can take several minutes. Please keep this page open.</p></div>
+      </section>
+
+      <section id="result" class="panel success hidden" aria-live="polite">
+        <div><strong>Package ready</strong><p id="result-copy"></p></div>
+        <a id="download-link" class="download" href="#">Download ZIP</a>
+      </section>
+
+      <section id="error" class="panel error hidden" role="alert"></section>
+    </main>
+
+    <footer>
+      <p>This tool produces preliminary drafts for review by a qualified U.S. immigration attorney. It does not provide legal advice, determine eligibility, or create an attorney-client relationship.</p>
+    </footer>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

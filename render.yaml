@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: eb1a-ai-system
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-5-mini
+      - key: MAX_CONTENT_LENGTH_MB
+        value: "20"
